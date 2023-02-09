@@ -1,0 +1,31 @@
+<div class="main-container">
+  <h1>TicTacToe Game!</h1>
+  <div class="players-info-container" *ngIf="plays && plays.length">
+    <h3>Player 1: X</h3>
+    <h3>Player 2: O</h3>
+    <ng-container *ngIf="winner; else elseTemplate">
+      <h1>Player {{winner === 'X' ? 1 : 2}} is the winner!</h1>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <h1>There was no winner!</h1>
+    </ng-template>
+    
+  </div>
+  
+  <div class="plays-container">
+    <mat-grid-list cols="5" rowHeight="2:1">
+      <mat-grid-tile *ngFor="let board of plays; let idx = index">
+        <table>
+          <tr *ngFor="let row of board">
+            <td *ngFor="let cell of row">  {{cell ?? ' '}}  </td>
+          </tr>
+        </table>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="btn-container">
+    <button mat-raised-button color="primary" (click)="startGame()">{{plays && plays.length ? "Restart Game!" : "Start Game!"}}</button>
+  </div>
+</div>
+
+

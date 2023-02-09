@@ -1,0 +1,32 @@
+table {
+    border-collapse: collapse;
+    width: 80%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    height: 20px;
+  }
+
+  mat-grid-tile {
+    margin: 2px
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+
+  .main-container {
+    margin: 2rem;
+    h1 {
+        text-align: center;
+    }
+  }
+
+  .players-info-container {
+    text-align: center;
+  }
